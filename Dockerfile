@@ -4,5 +4,5 @@ ADD src ./src
 RUN mvn package -DskipTests
 
 FROM openjdk:8-jre-alpine
-COPY --from=build /target/helloworld-*.jar /helloworld.jar
+COPY --from=build /target/JCG-BootKafka-Example-*.jar /helloworld.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/helloworld.jar"]
